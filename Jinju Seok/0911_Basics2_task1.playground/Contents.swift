@@ -119,28 +119,37 @@ connectString(intMonth: 3)
 
 
 //6. 윤년 구하기 (2월 29일이 있는 해.  매 4년 마다 윤년. 매 100년 째에는 윤년이 아님. 매 400년 째에는 윤년)
-
 func leapYear (year : Int) -> String {
-    //    if 0 == (year % 4) {
-    //        return "윤년"
-    //    }
-    //    else if 0 == (year % 100) {
-    //        return "윤년"
-    //    }
-    //    else if 0 == (year % 400) {
-    //        return "윤년"
-    //    }
-    //    else {
-    //        return "평년"
-    //    }
-    
     switch year {
-    case year where 0 == (year % 4) || 0 == (year % 100) || 0 == (year % 400) :
+    case year where 0 == (year % 400) || ( 0 == (year % 400) && 0 != (year % 100) ) :
         return "윤년"
     default:
         return "평년"
     }
 }
+
+/* 문제를 잘못 이해했던 코드
+ //    if 0 == (year % 4) {
+ //        return "윤년"
+ //    }
+ //    else if 0 == (year % 100) {
+ //        return "윤년"
+ //    }
+ //    else if 0 == (year % 400) {
+ //        return "윤년"
+ //    }
+ //    else {
+ //        return "평년"
+ //    }
+ //------
+ //    switch year {
+ //    case year where 0 == (year % 4) || 0 == (year % 100) || 0 == (year % 400) :
+ //        return "윤년"
+ //    default:
+ //        return "평년"
+ }
+ */
+
 
 leapYear(year: 2018)
 
