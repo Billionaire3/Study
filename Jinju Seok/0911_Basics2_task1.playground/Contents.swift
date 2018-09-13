@@ -114,7 +114,7 @@ func connectString (intMonth : Int) -> String {
     //        return "1~12사이의 숫자를 입력하세요."
     //    }
 }
-connectString(intMonth: 3)
+connectString(intMonth: 17)
 
 
 
@@ -128,6 +128,9 @@ func leapYear (year : Int) -> String {
     }
 }
 
+<<<<<<< HEAD
+leapYear(year: 100)
+=======
 /* 문제를 잘못 이해했던 코드
  //    if 0 == (year % 4) {
  //        return "윤년"
@@ -152,4 +155,5 @@ func leapYear (year : Int) -> String {
 
 
 leapYear(year: 2018)
+>>>>>>> 7048fa33e941a9ed1f5c2ffb5d048765aff746b9
 
