@@ -21,20 +21,25 @@ PrintDivisor(myInt: 18)
 //2. 2 이상의 정수를 입력받아, 소수인지 아닌지를 판별하는 함수
 func isThisPrimeNumber(inputValue: Int) {
     guard (inputValue > 1) else { return print("2 이상의 정수를 입력하세요. ") }
-    var arr2 : [Int] = []
-    for temp in 1...inputValue {
+    //    var arr2 : [Int] = []
+    for temp in 2..<inputValue {
         if (0 == inputValue % temp) {
-            arr2.append(temp)
+            print("소수가 아님")
+            return
+            //            arr2.append(temp)
         }
     }
-    if 2 == arr2.count {
-        print("입력한 정수는 소수입니다. ")
-    }
-    else {
-        print("입력한 정수는 소수가 아닙니다. ")
-    }
+    //    if 2 == arr2.count {
+    //        print("입력한 정수는 소수입니다. ")
+    //    }
+    //    else {
+    //        print("입력한 정수는 소수가 아닙니다. ")
+    //    }
 }
 isThisPrimeNumber(inputValue: 20)
+
+// 배열 사용 X
+
 
 
 //3. 정수를 입력받아 입력받은 수에 해당하는 자리의 피보나치 숫자를 반환하는 함수
