@@ -114,7 +114,7 @@ func connectString (intMonth : Int) -> String {
     //        return "1~12사이의 숫자를 입력하세요."
     //    }
 }
-connectString(intMonth: 3)
+connectString(intMonth: 17)
 
 
 
@@ -142,5 +142,5 @@ func leapYear (year : Int) -> String {
     }
 }
 
-leapYear(year: 2018)
+leapYear(year: 100)
 
