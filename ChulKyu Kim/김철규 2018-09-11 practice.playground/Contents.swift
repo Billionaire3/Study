@@ -161,23 +161,6 @@ calendar(month: 4)
  윤년 구하기 (2월 29일이 있는 해.  매 4년 마다 윤년. 매 100년 째에는 윤년이 아님. 매 400년 째에는 윤년) */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 func leapYear(year: Int) {
     switch year {
     case year where (year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0):
