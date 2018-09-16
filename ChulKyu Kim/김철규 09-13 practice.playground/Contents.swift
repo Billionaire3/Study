@@ -42,20 +42,21 @@ on 과 off 값을 가진 enum 타입 RemoteControl 에 호출 시마다 on, off 
 enum RemoteControl {
     case on, off
 
-    mutating func turnOff() {
-        self = .off
+    mutating func turnOnOff() {
+        switch self {
+        case .on:
+            self = .off
+        case .off:
+            self = .on
+        }
+      
     }
-    mutating func turnOn() {
-        self = .on
-    }
-
 }
 
-var on = RemoteControl.on
-on.turnOn()
-var off = RemoteControl.off
-off.turnOff()
-
+var remote = RemoteControl.on
+remote.turnOnOff()
+remote.turnOnOff()
+    
 
 
  /*********************** Question ****************************
@@ -66,9 +67,26 @@ off.turnOff()
  섭씨 = 켈빈 + 273
  ***************************************************/
 
-//enum Temperature {
-//
-//}
+enum Temperature {
+    case celcius, fahrenheit, kelvin
+}
+
+    func toCelcius(x: Double, y: Temperature) -> Double {
+        switch y {
+        case .celcius:
+            print(x)
+            return x
+        case .fahrenheit:
+            print((x - 32) * 5 / 9)
+            return ((x - 32) * 5 / 9)
+        case .kelvin:
+            print((x + 273))
+            return (x + 273)
+        }
+    }
+    
+toCelcius(x: 34.5, y: .fahrenheit)
+
 
 
 
@@ -116,13 +134,6 @@ func calculator(x: Int, y: Int, z: Arithmetic) -> Int {
 
 calculator(x: 41, y: -23, z: .addition)
 
-
-
-
-
-
-
- 
  
 
 /* ================================= 과제 3 ================================
