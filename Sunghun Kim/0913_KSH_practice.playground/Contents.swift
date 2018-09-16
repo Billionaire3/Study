@@ -9,7 +9,6 @@ import UIKit
  - enum Month { case jan, feb } 를 정의하되 2월이 윤년인지 아닌지 정보를 전달할 수 있도록 구현
  ---
  */
-//Q> enum 안에 func을 넣어서 할수는 없나?
 
 enum Month {
     case jan(String)
@@ -19,14 +18,55 @@ enum Month {
 func checkLeapYear(thisYear: Month) {
     switch thisYear {
     case let .feb(a) where (a % 400 == 0) || (a % 4 == 0) && (a % 100 != 0) :
-        print ("\(a) feb은 윤년")
+        print ("\(a)년 2월은 윤년달")
     case let .feb(a) where !(a % 400 == 0) || (a % 4 == 0) && (a % 100 != 0) :
-        print ("\(a) feb은 not 윤년")
+        print ("\(a)년 2월은 not 윤년달")
     default:
         print ("Error")
     }
 }
 checkLeapYear(thisYear: .feb(a: 6))
+
+
+//enum 안에 func 넣어서 풀어보기
+enum Month1 {
+    case feb(a: Int)
+    
+    func leapYear() {
+        switch self {
+        case let .feb(a) where (a % 400 == 0) || (a % 4 == 0) && (a % 100 != 0) :
+            print ("\(a)년 feb은 윤년달")
+        case let .feb(a) where !(a % 400 == 0) || (a % 4 == 0) && (a % 100 != 0) :
+            print ("\(a)년 feb은 not 윤년달")
+        default:
+            print ("Error")
+        }
+    }
+}
+
+let year = Month1.feb(a: 2000)
+year.leapYear()
+
+//case feb(a: Int) 대신 a 지우고 아래 switch case 에서 feb(Int)를 let .feb(a)로 받아서 사용
+enum Month2 {
+    case feb(Int)
+    
+    func leapYear() {
+        switch self {
+        case let .feb(a) where (a % 400 == 0) || (a % 4 == 0) && (a % 100 != 0) :
+            print ("\(a)년 feb은 윤년달")
+        case let .feb(a) where !(a % 400 == 0) || (a % 4 == 0) && (a % 100 != 0) :
+            print ("\(a)년 feb은 not 윤년달")
+        default:
+            print ("Error")
+        }
+    }
+}
+
+let year2 = Month2.feb(2000)
+year2.leapYear()
+Month2.feb(2000).leapYear() //return값이 없어서 우측에는 아무 표시가 안됨????? 아닌거 같은데
+
 
 
 
@@ -65,16 +105,30 @@ remoteControl.toggle() //on
  - 각 케이스별로 연산을 수행하고 그 값을 반환하는 evalue 함수 구현
  ---
  */
+indirect enum Arithmetics {
+    case number(Int)
+    case addition(Arithmetics, Arithmetics)
+    case multiplication(Arithmetics, Arithmetics)
+}
 
-//func evaluate(_ expression: ArithmeticExpression) -> Int {
-//  switch expression {
-//
-//    case .number(let value)
-//        return value
-//  }
-//}
+let six = Arithmetics.number(6)
+let ten = Arithmetics.number(10)
+let sum = Arithmetics.addition(six, ten)
+let product = Arithmetics.multiplication(sum, Arithmetics.number(2))
 
 
+func evaluate(_ expression: Arithmetics) -> Int {
+    switch expression {
+    case let .number(value) :
+        return value
+    case let .addition(value1, value2) :
+        return evaluate(value1) + evaluate(value2)  //Q>이부분 이해가 어렵네
+    case let .multiplication(value1, value2) :
+        return evaluate(value1) * evaluate(value2)
+    }
+}
+evaluate(sum)
+evaluate(product)
 
 /***************************************************
  celcius, fahrenheit, kelvin 온도 3가지 케이스를 가진 Temperature enum 타입을 정의
@@ -85,11 +139,34 @@ remoteControl.toggle() //on
  ***************************************************/
 
 enum Temperature {
-    case celcius, fahrenheit, kelvin
+    case celcius(Double)
+    case fahrenheit(Double)
+    case kelvin(Double)
+    
     func toCelcius() -> Double {
-        return 3
+        switch self {
+        case let .celcius(degree) :
+            return degree
+        case let .fahrenheit(degree):
+            return (degree-32) * 5 / 9
+        case let .kelvin(degree):
+            return degree + 273
+        }
     }
 }
+
+let cel = Temperature.celcius(36.5)
+let fahr = Temperature.fahrenheit(36.5)
+let kel = Temperature.kelvin(36.5)
+cel.toCelcius()
+fahr.toCelcius()
+kel.toCelcius()
+print(Temperature.kelvin(40.7).toCelcius())
+print(cel.toCelcius())
+
+
+
+
 
 
 
