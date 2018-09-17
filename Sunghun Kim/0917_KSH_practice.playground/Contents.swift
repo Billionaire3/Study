@@ -156,3 +156,119 @@ sampleCircle.CircleArea()
 sampleCircle.CircleLength()
 
 
+//==========================================================================
+
+//** 강아지 (Dog)
+//- 속성: 이름, 나이, 몸무게, 견종
+//- 행위: 짖기, 먹기
+
+class Dog {
+    var name: String
+    var age: Int
+    var weight: Int
+    var species: String
+    
+    init (name: String, age: Int, weight: Int, species: String) {
+        self.name = name
+        self.age = age
+        self.weight = weight
+        self.species = species
+    }
+    func bark() {
+        print("Mung! Mung!")
+    }
+    func eat() {
+        print("chop chop chop")
+    }
+}
+var pet = Dog(name: "pig", age: 5, weight: 10, species: "beagle")
+print(pet.name)
+pet.bark()
+pet.eat()
+
+//** 학생 (Student)
+//- 속성: 이름, 나이, 학교명, 학년
+//- 행위: 공부하기, 먹기, 잠자기
+
+class Student {
+    var name = "franky"
+    var age = 33
+    var schoolName = "iOS"
+    var grade = 1
+    
+    func study() {
+        print ("\(name) is studying.")
+    }
+}
+let tony : Student = Student()
+print(tony.name)
+tony.study()
+
+//** 아이폰(IPhone)
+//- 속성: 기기명, 가격, faceID 기능 여부(Bool)
+//- 행위: 전화 걸기, 문자 전송
+
+
+//** 커피(Coffee)
+//- 속성: 이름, 가격, 원두 원산지
+
+
+//2. 계산기 클래스를 만들고 다음과 같은 기능을 가진 Property 와 Method 정의해보기
+
+
+//** 계산기 (Calculator)
+//- 속성: 현재 값
+//- 행위: 더하기, 빼기, 나누기, 곱하기, 값 초기화
+
+//ex)
+//let calculator = Calculator() // 객체생성
+
+//calculator.value  // 0
+//calculator.add(10)    // 10
+//calculator.add(5)     // 15
+
+//calculator.subtract(9)  // 6
+//calculator.subtract(10) // -4
+
+//calculator.multiply(4)   // -16
+//calculator.multiply(-10) // 160
+
+//calculator.divide(10)   // 16
+//calculator.reset()      // 0
+
+class Calculator {
+    var currentNum = 0.0
+    var newNum = 0.0
+    
+//    init (newNum: Double) {
+//        self.newNum = newNum
+//    }
+    func addition() {
+        currentNum += newNum
+        print ("\(currentNum)")
+    }
+    func substraction() {
+        currentNum -= newNum
+        print ("\(currentNum)")
+    }
+    func multiplication() {
+        currentNum *= newNum
+        print ("\(currentNum)")
+        }
+    func division() {
+        currentNum /= newNum
+        print ("\(currentNum)")
+        }
+    func reset() {
+        currentNum = 0.0
+        newNum = 0.0
+        print ("\(currentNum)")
+    }
+}
+
+var calculator = Calculator()
+calculator.newNum = 5.0
+calculator.addition()
+calculator.multiplication()
+calculator.division()
+calculator.reset()
