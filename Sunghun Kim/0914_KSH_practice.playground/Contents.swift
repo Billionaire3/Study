@@ -78,8 +78,7 @@ print(thisClosure2([1,4,2,6]))
 //- 3의 배수만 나오도록 필터링
 //================================================================================
 
-var someArray = [Int]()
-someArray += 1...100
+var someArray = Array(1...100)
 var even = someArray.filter { $0 % 2 == 0 }
 even
 var thirds = someArray.filter{ $0 % 3 == 0 }
