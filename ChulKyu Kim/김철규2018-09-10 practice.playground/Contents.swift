@@ -4,23 +4,24 @@ import Foundation
 
 //practice
 //============================== practice 1 ==================================
-func name(name: String) {
+
+func name(_ name: String) {
     print(name)
-    
 }
-name(name: "maru")
+
+name("maru")
 
 //============================== practice 2 ==================================
 
-func age(age: Int) {
+func age(_ age: Int) {
     print(age)
 }
-age(age: 2)
+age(2)
 
 //============================== practice 3 ==================================
 
 func introduce(name: String, age: Int) {
-    print("Hello my name is " + name + " I'm " + String(age) + " years old")
+    print("Hello my name is \(name), I'm \(age) years old")
 }
 introduce(name: "Maru", age: 2)
 
@@ -34,7 +35,7 @@ func check2n(number: Int) -> String {
         return "2의 배수 X"
     }
 }
-check2n(number: 5)
+check2n(number: 5 )
 check2n(number: 4)
 
 //============================== practice 5 ==================================
