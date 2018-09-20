@@ -95,11 +95,19 @@ var isIncluded: (Int) -> Bool = { (x: Int) -> Bool in
 
 
 
-//func filter(isIncluded: (Int) -> Bool ) -> [Int] {
-//    return even.append(isIncluded)
-//}
+func filter(isIncluded: (Int) -> Bool ) -> [Int] {
 
+    var result: [Int] = []
+    for element in oneHundred {
+        if isIncluded(element) {
+            result.append(element)
+        }
+    }
+    return result
+}
 
+filter(isIncluded: isIncluded)
+filter(isIncluded: { $0 % 3 == 0 })
 
 
 
