@@ -39,17 +39,21 @@ class ViewController: UIViewController {
 
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
-        if seg1.selectedSegmentIndex == 0 {
-            display.text = sender.titleForSegment(at: 0)
-        } else if seg1.selectedSegmentIndex == 1 {
-            display.text = sender.titleForSegment(at: 1)
-        } else if seg1.selectedSegmentIndex == 2 {
-            display.text = sender.titleForSegment(at: 2)
-        } else if seg1.selectedSegmentIndex == 3 {
-            display.text = sender.titleForSegment(at: 3)
-        } else if seg1.selectedSegmentIndex == 4 {
-            display.text = sender.titleForSegment(at: 4)
-        }
+        let index = sender.selectedSegmentIndex
+        let title = sender.titleForSegment(at: index)
+        display.text = title
+        
+//        if seg1.selectedSegmentIndex == 0 {
+//            display.text = sender.titleForSegment(at: 0)
+//        } else if seg1.selectedSegmentIndex == 1 {
+//            display.text = sender.titleForSegment(at: 1)
+//        } else if seg1.selectedSegmentIndex == 2 {
+//            display.text = sender.titleForSegment(at: 2)
+//        } else if seg1.selectedSegmentIndex == 3 {
+//            display.text = sender.titleForSegment(at: 3)
+//        } else if seg1.selectedSegmentIndex == 4 {
+//            display.text = sender.titleForSegment(at: 4)
+//        }
         
     }
     
