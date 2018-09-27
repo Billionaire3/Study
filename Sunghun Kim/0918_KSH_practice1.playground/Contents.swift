@@ -33,26 +33,25 @@ import UIKit
 class Square {
     var area: Float = 0
     var perimeter: Float = 0
-    var s: Float = 0
+    var length: Float = 0
     
-    func area(s: Float) -> Float {
+    func squareArea1(s: Float) -> Float {
         area = s * s
         print (area)
         return area
     }
     
-    
-    func area2() {
-        area = s * s
+    func squareArea2() {
+        area = length * length
         print (area)
     }
 }
 
 let a1 = Square()
-a1.s = 5.2
-a1.area(s: 3.7)
-a1.s
-a1.area2
+a1.length = 3
+a1.squareArea1(s: 4)
+a1.length
+a1.squareArea2()
 
 
 class Sphere {
@@ -60,7 +59,7 @@ class Sphere {
     var radius: Double = 0
     let π: Double = Double.pi
     
-    func volume(r: Double) -> Double {
+    func SphereVolume(r: Double) -> Double {
         volume = 4 / 3 * r * r * r * π
         print (volume)
         return volume
@@ -69,23 +68,7 @@ class Sphere {
 
 let b1 = Sphere()
 b1.π
-b1.volume(r: 10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+b1.SphereVolume(r: 4)
 
 
 
