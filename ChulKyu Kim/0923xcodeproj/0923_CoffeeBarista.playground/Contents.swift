@@ -18,6 +18,9 @@ class Customer {
 
 class Barista: Customer {
     
+//    init(name: String)
+//    self.name = name
+    
     func makeCoffee(menu: CoffeeMenu) {
         
     }
