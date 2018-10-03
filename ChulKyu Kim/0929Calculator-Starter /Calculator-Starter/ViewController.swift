@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         display.text = "0"
     }
     
-    var stringToNum: String? = nil // label에 나오는 숫자
+    var stringToNum: String? = "0" // label에 나오는 숫자
     var firstNum = 0.0             // 연산자 입력 전에 입력 되었던 숫자
     var lastNum = 0.0              // 연산자 입력 후 입력되는 숫자
     var userIsTyping = false       // 연산자 입력 유무를 확인하기 위한 변수
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             print(firstNum)
             switch sender.currentTitle! {
             case "+":
-                display.text = "\(firstNum)"
+                display.text = "\(firstNum)" // firstNum만 디스플레이에 출력하면 연산자 중복입력해도 오류X
                 operation = "+"
             case "-":
                 display.text = "\(firstNum)"
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
 //            stringToNum = nil
             
         } else if sender.currentTitle! == "AC" {
-            stringToNum = nil
+            stringToNum = "0"
             firstNum = 0
             lastNum = 0
             operation = nil
