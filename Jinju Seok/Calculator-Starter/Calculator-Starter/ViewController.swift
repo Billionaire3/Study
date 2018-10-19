@@ -81,7 +81,10 @@ class ViewController: UIViewController {
 //        userInputArr = ["2", "-", "10", "/", "5", "*", "6", "+", "4", "*", "2", "-", "9"]
         
         userInputArr.append(tempInputArr.joined())
+<<<<<<< HEAD
+=======
         tempInputArr.removeAll()        //추가
+>>>>>>> 8ad71f31c92ca50cbfd6f861e634587c4ced40f7
         
         for value in userInputArr
         {
