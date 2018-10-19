@@ -1,24 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Vendin Machine View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VendinMachineViewController" customModule="CustomViewControll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-QX-2CT">
+                                <rect key="frame" x="10" y="30" width="355" height="350"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsn-3W-E6q" customClass="DrinkVendingMachine" customModule="CustomViewControll" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="162.5" height="160"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="coffee"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-Xk-5LX" customClass="DrinkVendingMachine" customModule="CustomViewControll" customModuleProvider="target">
+                                        <rect key="frame" x="182.5" y="10" width="162.5" height="160"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdH-m4-y1g" customClass="DrinkVendingMachine" customModule="CustomViewControll" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="180" width="162.5" height="160"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smO-47-x4b" customClass="DrinkVendingMachine" customModule="CustomViewControll" customModuleProvider="target">
+                                        <rect key="frame" x="182" y="180" width="162.5" height="160"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NDu-Xk-5LX" firstAttribute="height" secondItem="nsn-3W-E6q" secondAttribute="height" id="20W-EC-0hM"/>
+                                    <constraint firstItem="kdH-m4-y1g" firstAttribute="width" secondItem="nsn-3W-E6q" secondAttribute="width" id="4o5-gj-Gzr"/>
+                                    <constraint firstItem="smO-47-x4b" firstAttribute="height" secondItem="nsn-3W-E6q" secondAttribute="height" id="6tP-VC-w6v"/>
+                                    <constraint firstItem="kdH-m4-y1g" firstAttribute="leading" secondItem="P2G-QX-2CT" secondAttribute="leading" constant="10" id="9cF-k9-Y91"/>
+                                    <constraint firstItem="NDu-Xk-5LX" firstAttribute="top" secondItem="P2G-QX-2CT" secondAttribute="top" constant="10" id="Et5-E0-aPd"/>
+                                    <constraint firstItem="nsn-3W-E6q" firstAttribute="top" secondItem="P2G-QX-2CT" secondAttribute="top" constant="10" id="I4t-Sw-K4L"/>
+                                    <constraint firstItem="smO-47-x4b" firstAttribute="top" secondItem="NDu-Xk-5LX" secondAttribute="bottom" constant="10" id="KRV-kU-auA"/>
+                                    <constraint firstItem="NDu-Xk-5LX" firstAttribute="width" secondItem="nsn-3W-E6q" secondAttribute="width" id="Nq4-ao-4L9"/>
+                                    <constraint firstItem="NDu-Xk-5LX" firstAttribute="leading" secondItem="nsn-3W-E6q" secondAttribute="trailing" constant="10" id="OK8-wo-dWp"/>
+                                    <constraint firstItem="kdH-m4-y1g" firstAttribute="height" secondItem="nsn-3W-E6q" secondAttribute="height" id="Xnd-5v-qt6"/>
+                                    <constraint firstAttribute="trailing" secondItem="NDu-Xk-5LX" secondAttribute="trailing" constant="10" id="Yap-NF-aVZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="smO-47-x4b" secondAttribute="bottom" constant="10" id="eYo-cd-aR0"/>
+                                    <constraint firstAttribute="trailing" secondItem="smO-47-x4b" secondAttribute="trailing" constant="10" id="fjh-r4-T4n"/>
+                                    <constraint firstItem="kdH-m4-y1g" firstAttribute="top" secondItem="nsn-3W-E6q" secondAttribute="bottom" constant="10" id="lzJ-6y-XDt"/>
+                                    <constraint firstAttribute="height" constant="350" id="nB7-pJ-L6x"/>
+                                    <constraint firstItem="smO-47-x4b" firstAttribute="leading" secondItem="kdH-m4-y1g" secondAttribute="trailing" constant="10" id="p5N-ft-AQE"/>
+                                    <constraint firstItem="nsn-3W-E6q" firstAttribute="leading" secondItem="P2G-QX-2CT" secondAttribute="leading" constant="10" id="sLn-VH-AEZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="kdH-m4-y1g" secondAttribute="bottom" constant="10" id="wJS-hI-cYX"/>
+                                    <constraint firstItem="smO-47-x4b" firstAttribute="width" secondItem="nsn-3W-E6q" secondAttribute="width" id="wuz-gK-izx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P2G-QX-2CT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="5Fq-Hj-kVN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P2G-QX-2CT" secondAttribute="trailing" constant="10" id="VWW-y9-eyg"/>
+                            <constraint firstItem="P2G-QX-2CT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="v8E-jG-dGB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="kindOfDrinkViews" destination="nsn-3W-E6q" collectionClass="NSMutableArray" id="7Dh-1I-tnV"/>
+                        <outletCollection property="kindOfDrinkViews" destination="NDu-Xk-5LX" collectionClass="NSMutableArray" id="wbU-Im-OSw"/>
+                        <outletCollection property="kindOfDrinkViews" destination="kdH-m4-y1g" collectionClass="NSMutableArray" id="Dv4-Xf-JmT"/>
+                        <outletCollection property="kindOfDrinkViews" destination="smO-47-x4b" collectionClass="NSMutableArray" id="FDv-pP-GbL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="coffee" width="194" height="259"/>
+    </resources>
 </document>
